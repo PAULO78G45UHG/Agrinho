@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ritmos da Terra e da Cidade</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="img/pl-removebg-preview.png" />
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+  <script src="sketch.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Ritmos da Terra e da Cidade</h1>
+    <p>Explorando os vínculos que aproximam o urbano e o rural em harmonia.</p>
+  </header>
+
+  <main>
+    <section class="galeria">
+      <img src="img/campo.jpg" alt="Campo" />
+      <img src="img/cidade.webp" alt="Cidade" />
+      <img src="img/feiratatuape.jpg" alt="Feira" />
+      <img src="img/tecnologia.jpg" alt="Tecnologia" />
+    </section>
+
+    <section class="descricao">
+      <h2>Campo e Cidade: Forças Complementares</h2>
+      <p>
+        A cidade pulsa com inovação, enquanto o campo cultiva a base de tudo.
+        Juntas, essas realidades constroem o progresso de forma equilibrada.
+      </p>
+      <button class="botao" onclick="abrirModal('modal1')">Saiba Mais</button>
+    </section>
+
+    <section class="descricao destaque">
+      <h2>Transformações e Conexões</h2>
+      <p>
+        Cada produto rural que chega à cidade carrega histórias de trabalho,
+        cultura e natureza. Celebrar essa jornada é respeitar nossas raízes.
+      </p>
+      <button class="botao" onclick="abrirModal('modal2')">Saiba Mais</button>
+    </section>
+
+    <!-- NOVA SEÇÃO -->
+    <section class="info-campo-cidade">
+      <h2>Contribuições Únicas</h2>
+      <div class="blocos-info">
+        <div class="bloco campo">
+          <h3>O Campo em Nossas Vidas</h3>
+          <p>
+            É no campo que nasce a base da nossa alimentação. Além de grãos, frutas e hortaliças,
+            ele é berço de práticas sustentáveis, de saberes tradicionais e de culturas que preservam o planeta.
+          </p>
+        </div>
+        <div class="bloco cidade">
+          <h3>A Cidade e o Futuro</h3>
+          <p>
+            A cidade transforma o que o campo produz. Com seus centros tecnológicos, universidades e
+            polos culturais, ela impulsiona a economia, inovações e soluções para o bem-estar coletivo.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div id="animacao-canvas"></div>
+  </main>
+
+  <!-- Modal 1 -->
+  <div id="modal1" class="modal">
+    <div class="modal-conteudo">
+      <span class="fechar" onclick="fecharModal('modal1')">&times;</span>
+      <h2>Conexão Diária</h2>
+      <p>
+        O campo fornece alimentos, ar puro e equilíbrio ecológico. A cidade
+        retorna com tecnologia, serviços e inovação. Essa troca é vital para
+        o crescimento conjunto.
+      </p>
+    </div>
+  </div>
+
+  <!-- Modal 2 -->
+  <div id="modal2" class="modal">
+    <div class="modal-conteudo">
+      <span class="fechar" onclick="fecharModal('modal2')">&times;</span>
+      <h2>Parceria Sustentável</h2>
+      <p>
+        Incentivar a valorização do rural é garantir um futuro sustentável.
+        A cidade, ao apoiar essa valorização, fortalece suas próprias bases.
+      </p>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 Paulo Ricardo. Todos os direitos reservados.
+  </footer>
+
+  <script>
+    function abrirModal(id) {
+      document.getElementById(id).style.display = "block";
+    }
+
+    function fecharModal(id) {
+      document.getElementById(id).style.display = "none";
+    }
+
+    window.onclick = function(event) {
+      const modais = document.querySelectorAll(".modal");
+      modais.forEach(modal => {
+        if (event.target === modal) modal.style.display = "none";
+      });
+    };
+  </script>
+</body>
+</html>
